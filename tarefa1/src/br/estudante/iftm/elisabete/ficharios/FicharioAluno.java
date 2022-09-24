@@ -118,6 +118,7 @@ public class FicharioAluno {
         }
         catch (DateTimeException exception){
             System.out.println("Data inválida! Insira outra data ");
+
             return setarDataNasciment(aluno);
         }
 

@@ -1,12 +1,14 @@
 package br.estudante.iftm.elisabete.modelos;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Pessoa {
     protected String nome;
     protected String cpf;
     protected String telefone;
     protected String email;
+
     protected LocalDate dataNascimento;
 
     public Pessoa(){
@@ -16,6 +18,18 @@ public class Pessoa {
         this.nome = nome;
     }
 
+
+    public void setDataNascimento(LocalDate dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    public void setDataNascimento(String dataNascimento) {
+
+        DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate dataNascimentoFormatada = LocalDate.parse(dataNascimento,formatador);
+
+        this.dataNascimento = dataNascimentoFormatada;
+    }
 
 
     public String getEmail() {

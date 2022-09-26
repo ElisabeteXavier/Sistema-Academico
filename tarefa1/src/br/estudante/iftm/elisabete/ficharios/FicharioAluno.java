@@ -25,7 +25,7 @@ public class FicharioAluno {
     }
 
 
-    public Aluno buscaNome(String nomeAlterado) {
+    private Aluno buscaNome(String nomeAlterado) {
 
         for (int j = 0; j < alunos.size(); j++) {
 
@@ -36,7 +36,7 @@ public class FicharioAluno {
         return null;
     }
 
-    public Aluno buscacpf(String cpfAlterado) {
+    private Aluno buscacpf(String cpfAlterado) {
 
         for (int j = 0; j < alunos.size(); j++) {
 
@@ -47,7 +47,7 @@ public class FicharioAluno {
         return null;
     }
 
-    public Aluno buscaMatricula(String matriculaAlterada) {
+    private Aluno buscaMatricula(String matriculaAlterada) {
 
 
         Aluno aluno = new Aluno(matriculaAlterada);
@@ -60,7 +60,7 @@ public class FicharioAluno {
             return null;
     }
 
-    public Aluno tiposBuscaAlunos() {
+    private Aluno tiposBuscaAlunos() {
         int opcoesBusca;
         String nome, cpf, matricula;
         Aluno aluno = new Aluno();
@@ -91,7 +91,7 @@ public class FicharioAluno {
         return aluno;
     }
 
-    public Aluno setarAluno(){
+    private Aluno setarAluno(){
         String nome, matricula, telefone, cpf, email, dataNascimento;
         System.out.println(" === Cadastrar ALUNO ==== ");
         System.out.print("Nome: ");
@@ -210,7 +210,7 @@ public class FicharioAluno {
 
         System.out.println("===DESEJA INFORMAR O ALUNO A SER CONSULTADO POR:===");
         Aluno aluno = tiposBuscaAlunos();
-        System.out.println(aluno != null ? aluno : "Cadastro não encontrado!!");
+        System.out.println(aluno != null ? aluno : "Aluno não encontrado!!");
 
     }
 

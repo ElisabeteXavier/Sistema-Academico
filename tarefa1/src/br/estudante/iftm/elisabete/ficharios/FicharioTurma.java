@@ -19,34 +19,36 @@ public class FicharioTurma {
     }
 
 
+    private Turma buscaNome(String nome) {
 
-    public Turma buscaNome(String nome) {
+        Turma turma = new Turma(nome);
+
+        if (turmas.contains(turma)) {
+            int i = turmas.indexOf(turma);
+
+            return turmas.get(i);
+        }
+        return null;
+
+
+    }
+
+
+    private Turma buscaCodigo(int codigo) {
 
         for (Turma turma : turmas) {
 
-            if (turma != null && turma.getNome().equals(nome)) {
+            if (turma != null && turma.getCodigo() ==(codigo)) {
                 return turma;
             }
         }
         return null;
     }
 
-
-
-    public Turma buscaCodigo(String codigo) {
-
-        for (Turma turma : turmas) {
-
-            if (turma != null && turma.getCodigo().equals(codigo)) {
-                return turma;
-            }
-        }
-        return null;
-    }
-
-    public Turma tiposBuscaTurmas(){
+    private Turma tiposBuscaTurmas() {
         int opcoesBusca;
-        String nome,codigo;
+        String nome;
+        int codigo;
         Turma retornoTurma = null;
 
         System.out.println("1- Nome");
@@ -62,7 +64,7 @@ public class FicharioTurma {
             }
             case 2 -> {
                 System.out.print("Código ");
-                codigo = entrada.nextLine();
+                codigo = entrada.nextInt();
                 retornoTurma = buscaCodigo(codigo);
 
             }
@@ -71,81 +73,63 @@ public class FicharioTurma {
     }
 
 
-    public Turma setarTurmas() {
+    private Turma setarTurmas() {
 
-        String nome, codigo;
+        String nome;
+        System.out.println("===CADASTRO DA TURMA===");
         System.out.print("Nome: ");
         nome = entrada.nextLine();
-        System.out.print("Código: ");
-        codigo = entrada.nextLine();
-        return new Turma(nome, codigo);
+        return new Turma(nome);
 
     }
 
     public void cadastrar() {
 
-        System.out.println("===CADASTRO DA TURMA===");
+        Turma turma =setarTurmas();
 
-        turmas.add(setarTurmas());
-
+        if(turmas.contains(turma)){
+            System.out.println("Cadastro não realizado! já existe uma turma com esse nome");
+        } else {
+            turmas.add(turma);
+            System.out.println("Cadastrado realizado!");
+        }
     }
 
 
     public void consultar() {
 
-        System.out.println("===INFORME O CÓDIGO DA TURMA:===");
-        String retornoCodigo = entrada.nextLine();
-        for (Turma turma : turmas) {
-            if (turma.getCodigo().equals(retornoCodigo))
-                System.out.println(turma.consultarAlunosTurma());
-        }
-
+        System.out.println("===DESEJA CONSULTAR A TURMA POR:===");
+         Turma turma = tiposBuscaTurmas();
+        System.out.println(turma != null ? turma : "Turma não encontrada!");
 
     }
 
     public void alterar() {
-        String nome, codigo;
-        int alteracaoFeita;
-
-
+        String nome;
         System.out.println("===BUSCAR TURMA A ALTERAR POR: ===");
         Turma turma = tiposBuscaTurmas();
 
-        if(turma != null){
+        if (turma != null) {
 
+            System.out.println(" Alterando o Nome da turma ");
 
-            System.out.println("O que deseja alterar? ");
-            System.out.println("1 - Nome da turma ");
-            System.out.println("2 - Código da turma ");
-
-            alteracaoFeita = entrada.nextInt();
-            entrada.skip("\n");
-
-            switch (alteracaoFeita) {
-                case 1 -> {
-                    System.out.print("Novo Nome: ");
+                    System.out.print(" Informe o novo Nome: ");
                     nome = entrada.nextLine();
                     turma.setNome(nome);
-                }
-                case 2 -> {
-                    System.out.print("Novo Código: ");
-                    codigo = entrada.nextLine();
-                    turma.setCodigo(codigo);
-                }
-            }
-            }
-        else
+
+
+        } else
             System.out.println("Turma não encontrada!");
     }
 
-    private boolean turmaVazia(Turma turma){
+    private boolean turmaVazia(Turma turma) {
         return turma.getAlunosTurmas().isEmpty();
     }
 
-    public void excluir(){
+    public void excluir() {
 
         Turma turma = tiposBuscaTurmas();
-        if(turmaVazia(turma)) {
+        if (turmaVazia(turma)) {
             System.out.println("Confirma a exclusão?");
             System.out.println("1- Sim\n 2-Não");
             int confirmacao = entrada.nextInt();
@@ -157,20 +141,15 @@ public class FicharioTurma {
                 } else System.out.println("Operação cancelada, turma não excluída!");
             } else
                 System.out.println("Turma não encontrada!");
-        }else System.out.println("Não foi possível excluir a turma pois ela contém alunos vinculados!");
+        } else System.out.println("Não foi possível excluir a turma pois ela contém alunos vinculados!");
     }
 
 
     public void relatorio() {
 
         System.out.println("[Relatório de TURMAS]");
-        for (Turma turma : turmas) {
-            if (turma != null) {
-                System.out.println(turma);
-                System.out.println("---------------------");
-            }
+        System.out.println(turmas);
 
-        }
     }
 }
 

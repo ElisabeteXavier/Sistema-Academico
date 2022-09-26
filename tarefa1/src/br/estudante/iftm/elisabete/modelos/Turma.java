@@ -1,18 +1,22 @@
 package br.estudante.iftm.elisabete.modelos;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Turma {
-    private String codigo;
+    private int  codigo;
     private String nome;
+
+    private static int geradorCodigo;
 
     private ArrayList<Aluno> alunosTurmas;
 
-    public String getCodigo() {
+
+    public int getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 
@@ -30,9 +34,9 @@ public class Turma {
 
     public Turma(){};
 
-    public Turma(String nome, String codigo){
+    public Turma(String nome){
         this.nome = nome;
-        this.codigo = codigo;
+        this.codigo = ++geradorCodigo;
         this.alunosTurmas = new ArrayList<>();
     }
     public String toString(){
@@ -51,5 +55,16 @@ public class Turma {
     }
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Turma turma = (Turma) o;
+        return Objects.equals(nome.toLowerCase(), turma.nome.toLowerCase());
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome);
+    }
 }

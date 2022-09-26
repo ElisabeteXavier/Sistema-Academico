@@ -19,7 +19,7 @@ public class FicharioProfessor {
     }
 
 
-    public Professor buscaProfessor(String cpfAlterado) {
+    private Professor buscaProfessor(String cpfAlterado) {
 
         for (int j = 0; j < professores.size(); j++) {
 
@@ -30,7 +30,7 @@ public class FicharioProfessor {
         return null;
     }
 
-    public Professor buscaProfessor(int registroAlterado) {
+    private Professor buscaProfessor(int registroAlterado) {
 
         Professor professor = new Professor(registroAlterado);
         int i = professores.indexOf(professor);
@@ -41,7 +41,7 @@ public class FicharioProfessor {
             return null;
     }
 
-    public Professor tiposBuscaProfessores() {
+    private Professor tiposBuscaProfessores() {
         String nome, cpf;
         int registro;
         int opcoesBusca;
@@ -71,7 +71,7 @@ public class FicharioProfessor {
         return professor;
     }
 
-    public Professor setarProfessor() {
+    private Professor setarProfessor() {
         String nome, telefone, cpf, email;
         int registro;
         System.out.print("Nome: ");

@@ -117,10 +117,10 @@ public class FicharioAluno {
         Aluno aluno = setarAluno();
 
         if (alunos.contains(aluno)) {
-            System.out.println("Cadastro não realizado! já existe um aluno com essa matricula");
+            System.out.println("\nCadastro não realizado! já existe um aluno com essa matricula\n");
         } else {
             alunos.add(aluno);
-            System.out.println("Cadastrado realizado!");
+            System.out.println("\nCadastrado realizado!\n");
         }
 
     }

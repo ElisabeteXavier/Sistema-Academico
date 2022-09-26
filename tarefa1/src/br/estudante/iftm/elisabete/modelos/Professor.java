@@ -30,13 +30,12 @@ public class Professor extends Pessoa {
     }
 
     public String toString() {
-        return "PROFESSOR{" +
+        return "\nPROFESSOR: " + nome +
                 "\nregistro= " + registro +
-                "\n nome= " + nome +
                 "\n cpf= " + cpf +
                 "\n telefone= " + telefone +
                 "\n email= " + email +
-                "}";
+                "\n";
     }
 
 

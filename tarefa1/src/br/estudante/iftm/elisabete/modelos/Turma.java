@@ -40,18 +40,16 @@ public class Turma {
         this.alunosTurmas = new ArrayList<>();
     }
     public String toString(){
-        return "TURMA{" +
+        return "TURMA" +
                 "\n nome= " + nome +
                 "\n código= " + codigo +
-                "}";
+                "";
     }
 
     public String consultarAlunosTurma(){
-        return "TURMA" +
-                " nome= " + nome +
-                " código= " + codigo +
-                "\n Alunos{ " + alunosTurmas +
-                "}";
+        return "TURMA: " + nome + " Código:" + codigo +
+                "\n Alunos\n " + alunosTurmas +
+                "";
     }
 
 

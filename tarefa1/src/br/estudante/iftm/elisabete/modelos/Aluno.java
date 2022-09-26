@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
-public class Aluno extends Pessoa{
+public class Aluno extends Pessoa {
     private String matricula;
 
     public String getMatricula() {
@@ -16,19 +16,19 @@ public class Aluno extends Pessoa{
     }
 
 
-    public Aluno(){
+    public Aluno() {
 
     }
 
-    public Aluno( String matricula){
-        this.matricula =matricula;
+    public Aluno(String matricula) {
+        this.matricula = matricula;
 
     }
 
-    public Aluno(String nome, String matricula, String telefone, String cpf, String email,String dataNascimento) {
+    public Aluno(String nome, String matricula, String telefone, String cpf, String email, String dataNascimento) {
 
         DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate dataNascimentoFormatada = LocalDate.parse(dataNascimento,formatador);
+        LocalDate dataNascimentoFormatada = LocalDate.parse(dataNascimento, formatador);
 
 
         this.nome = nome;
@@ -39,17 +39,15 @@ public class Aluno extends Pessoa{
         this.dataNascimento = dataNascimentoFormatada;
     }
 
-    public String toString(){
+    public String toString() {
 
         DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        return "Aluno{" +
-                "\nmatricula= " + matricula +
-                "\n nome= " + nome +
+        return "\nAluno: " + nome +
+                "\n matricula= " + matricula +
                 "\n cpf= " + cpf +
                 "\n telefone= " + telefone +
                 "\n email= " + email +
-              "\n Data de Nascimento= " + dataNascimento.format(formatador) +
-               "}";
+                "\n Data de Nascimento= " + dataNascimento.format(formatador);
     }
 
 

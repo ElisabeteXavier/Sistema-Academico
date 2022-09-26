@@ -82,9 +82,9 @@ public class FicharioEnturmacao {
 
                 if (!alunoVinculadoTurma(aluno)) {
                     turma.getAlunosTurmas().add(aluno);
-                    System.out.println("Aluno vinculado a turma");
+                    System.out.println("\nAluno vinculado a turma\n");
                 } else
-                    System.out.println("Aluno ja vinculado a uma turma");
+                    System.out.println("\nAluno ja vinculado a uma turma\n");
 
             } catch (NullPointerException e) {
                 System.out.println("Turma não encontrada!"+ e.getMessage());

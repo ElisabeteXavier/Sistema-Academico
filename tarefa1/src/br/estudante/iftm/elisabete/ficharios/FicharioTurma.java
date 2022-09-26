@@ -100,7 +100,7 @@ public class FicharioTurma {
 
         System.out.println("===DESEJA CONSULTAR A TURMA POR:===");
          Turma turma = tiposBuscaTurmas();
-        System.out.println(turma != null ? turma : "Turma não encontrada!");
+        System.out.println(turma != null ? turma.consultarAlunosTurma() : "Turma não encontrada!");
 
     }
 

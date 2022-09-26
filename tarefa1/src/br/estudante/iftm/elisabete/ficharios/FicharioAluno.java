@@ -49,13 +49,15 @@ public class FicharioAluno {
 
     public Aluno buscaMatricula(String matriculaAlterada) {
 
-        for (int j = 0; j < alunos.size(); j++) {
 
-            if (alunos.get(j) != null && alunos.get(j).getMatricula().equals(matriculaAlterada)) {
-                return alunos.get(j);
-            }
+        Aluno aluno = new Aluno(matriculaAlterada);
+
+        if(alunos.contains(aluno)){
+            int i = alunos.indexOf(aluno);
+            return alunos.get(i);
         }
-        return null;
+        else
+            return null;
     }
 
     public Aluno tiposBuscaAlunos() {
@@ -91,7 +93,7 @@ public class FicharioAluno {
 
     public Aluno setarAluno(){
         String nome, matricula, telefone, cpf, email, dataNascimento;
-
+        System.out.println(" === Cadastrar ALUNO ==== ");
         System.out.print("Nome: ");
         nome = entrada.nextLine();
         System.out.print("Matricula: ");
@@ -102,32 +104,24 @@ public class FicharioAluno {
         cpf = entrada.nextLine();
         System.out.print("Email: ");
         email = entrada.nextLine();
-
-        Aluno aluno = new Aluno(nome, matricula, telefone, cpf, email);
-
-        return setarDataNasciment(aluno);
-    }
-
-    public Aluno setarDataNasciment(Aluno aluno) {
-
         System.out.print("Data de nascimento dd/mm/yyyy: ");
-        String dataNascimento = entrada.nextLine();
+        dataNascimento = entrada.nextLine();
 
-        try {
-            return new Aluno(aluno.getNome(), aluno.getMatricula(), aluno.getTelefone(), aluno.getCpf(), aluno.getEmail(), dataNascimento);
-        }
-        catch (DateTimeException exception){
-            System.out.println("Data inválida! Insira outra data ");
-
-            return setarDataNasciment(aluno);
-        }
-
+        return new Aluno(nome, matricula, telefone, cpf, email,dataNascimento);
     }
+
 
     public void cadastrar() {
 
-        System.out.println(" === Cadastrar ALUNO ==== ");
-        alunos.add(setarAluno());
+
+        Aluno aluno = setarAluno();
+
+        if (alunos.contains(aluno)) {
+            System.out.println("Cadastro não realizado! já existe um aluno com essa matricula");
+        } else {
+            alunos.add(aluno);
+            System.out.println("Cadastrado realizado!");
+        }
 
     }
 

@@ -98,10 +98,10 @@ public class FicharioProfessor {
         Professor professor = setarProfessor();
 
         if (professores.contains(professor)) {
-            System.out.println("Cadastro não realizado! já existe um professor com esse registro");
+            System.out.println("\nCadastro não realizado! já existe um professor com esse registro");
         } else {
             professores.add(professor);
-            System.out.println("Cadastrado realizado!");
+            System.out.println("\nCadastrado realizado!\n");
         }
     }
 
@@ -121,7 +121,7 @@ public class FicharioProfessor {
 
             do {
 
-                System.out.println("O que deseja alterar? ");
+                System.out.println("\nO que deseja alterar? ");
                 System.out.println("1 - Nome do Professor ");
                 System.out.println("2 - Registro do Professor ");
                 System.out.println("3 - Telefone do Professor ");
@@ -161,14 +161,14 @@ public class FicharioProfessor {
 
                 }
 
-                System.out.println("Deseja alterar mais alguma coisa?");
+                System.out.println("\nDeseja alterar mais alguma coisa?");
                 System.out.println("1- Sim");
                 System.out.println("2- Não");
                 retorno = entrada.nextInt();
                 entrada.skip("\n");
             } while (retorno == 1);
         } else
-            System.out.println("Professor não encontrado!");
+            System.out.println("\nProfessor não encontrado!");
 
     }
 
@@ -176,14 +176,14 @@ public class FicharioProfessor {
 
         System.out.println("===DESEJA INFORMAR O PROFESSOR A SER EXCLUÍDO POR:===");
         Professor professor = tiposBuscaProfessores();
-        System.out.println("Confirma a exclusão?");
+        System.out.println("\nConfirma a exclusão?");
         System.out.println("1- Sim\n2-Não");
         int confirmacao = entrada.nextInt();
         entrada.skip("\n");
         if (confirmacao == 1) {
             professores.remove(professor);
-            System.out.println("Professor excluído");
-        } else System.out.println("Operação cancelada");
+            System.out.println("\nProfessor excluído");
+        } else System.out.println("\nOperação cancelada\n");
     }
 
 
@@ -191,13 +191,13 @@ public class FicharioProfessor {
 
         System.out.println("===DESEJA INFORMAR O PROFESSOR A SER CONSULTADO POR:===");
         Professor professor = tiposBuscaProfessores();
-        System.out.println(professor != null ? professor : "Cadastro nao encontrado!!");
+        System.out.println(professor != null ? professor : "\nCadastro nao encontrado!!\n");
 
     }
 
     public void relatorio() {
 
-        System.out.println("[Relatório de PROFESSORES]");
+        System.out.println("[Relatório de PROFESSORES]\n");
         for (Professor professor : professores) {
             if (professor != null) {
                 System.out.println(professor);

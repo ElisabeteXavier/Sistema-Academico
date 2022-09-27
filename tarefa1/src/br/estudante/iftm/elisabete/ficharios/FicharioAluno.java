@@ -7,8 +7,7 @@ import java.time.DateTimeException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-// adicionar os metodos alterar, excluir e consultar
-// não permitir exclusão de alunos vinculados a turmas
+
 public class FicharioAluno {
     private final ArrayList<Aluno> alunos;
 
@@ -29,7 +28,7 @@ public class FicharioAluno {
 
         for (int j = 0; j < alunos.size(); j++) {
 
-            if (alunos.get(j) != null && alunos.get(j).getNome().equals(nomeAlterado)) {
+            if (alunos.get(j) != null && alunos.get(j).getNome().toLowerCase().equals(nomeAlterado.toLowerCase())) {
                 return alunos.get(j);
             }
         }
@@ -140,7 +139,7 @@ public class FicharioAluno {
 
             do {
 
-                System.out.println("O que deseja alterar? ");
+                System.out.println("\nO que deseja alterar? ");
                 System.out.println("1 - Nome do Aluno ");
                 System.out.println("2 - Matricula do Aluno ");
                 System.out.println("3 - Telefone do Aluno ");
@@ -178,14 +177,14 @@ public class FicharioAluno {
 
                 }
 
-                System.out.println("Deseja alterar mais alguma coisa?");
+                System.out.println("\nDeseja alterar mais alguma coisa?");
                 System.out.println("1- Sim");
                 System.out.println("2- Não");
                 retorno = entrada.nextInt();
                 entrada.skip("\n");
             } while (retorno == 1);
         } else
-            System.out.println("Aluno não encontrado!");
+            System.out.println("\nAluno não encontrado!\n");
 
     }
 
@@ -194,15 +193,15 @@ public class FicharioAluno {
         System.out.println("===DESEJA INFORMAR O ALUNO A SER EXCLUÍDO POR:===");
         Aluno aluno = tiposBuscaAlunos();
         if (!ficharioEnturmacao.alunoVinculadoTurma(aluno)) {
-            System.out.println("Confirma a exclusão?");
+            System.out.println("\nConfirma a exclusão?");
             System.out.println("1- Sim\n 2-Não");
             int confirmacao = entrada.nextInt();
             entrada.skip("\n");
             if (confirmacao == 1) {
                 alunos.remove(aluno);
-                System.out.println("Aluno excluído");
-            } else System.out.println("Operação cancelada");
-        } else System.out.println("Não foi possível excluir o aluno, pois ele está vinculado a uma turma");
+                System.out.println("\nAluno excluído");
+            } else System.out.println("\nOperação cancelada");
+        } else System.out.println("\nNão foi possível excluir o aluno, pois ele está vinculado a uma turma\n");
 
     }
 
@@ -210,14 +209,14 @@ public class FicharioAluno {
 
         System.out.println("===DESEJA INFORMAR O ALUNO A SER CONSULTADO POR:===");
         Aluno aluno = tiposBuscaAlunos();
-        System.out.println(aluno != null ? aluno : "Aluno não encontrado!!");
+        System.out.println(aluno != null ? aluno : "\nAluno não encontrado!!\n");
 
     }
 
 
     public void relatorio() {
 
-        System.out.println("[Relatório de ALUNOS]");
+        System.out.println("[Relatório de ALUNOS]\n");
         for (Aluno aluno : alunos) {
             if (aluno != null) {
                 System.out.println(aluno);

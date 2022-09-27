@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FicharioTurma {
-    // para manutencao nas turmas
-    // deve ter os metodos cadastrar, alterar, excluir, consultar e relatorio
 
     private final ArrayList<Turma> turmas;
     private final Scanner entrada;
@@ -88,10 +86,10 @@ public class FicharioTurma {
         Turma turma =setarTurmas();
 
         if(turmas.contains(turma)){
-            System.out.println("Cadastro não realizado! já existe uma turma com esse nome");
+            System.out.println("\nCadastro não realizado! já existe uma turma com esse nome");
         } else {
             turmas.add(turma);
-            System.out.println("Cadastrado realizado!");
+            System.out.println("\nCadastrado realizado!\n");
         }
     }
 
@@ -100,7 +98,7 @@ public class FicharioTurma {
 
         System.out.println("===DESEJA CONSULTAR A TURMA POR:===");
          Turma turma = tiposBuscaTurmas();
-        System.out.println(turma != null ? turma.consultarAlunosTurma() : "Turma não encontrada!");
+        System.out.println(turma != null ? turma.consultarAlunosTurma() : "\nTurma não encontrada!");
 
     }
 
@@ -111,7 +109,7 @@ public class FicharioTurma {
 
         if (turma != null) {
 
-            System.out.println(" Alterando o Nome da turma ");
+            System.out.println("\nAlterando o Nome da turma ");
 
                     System.out.print(" Informe o novo Nome: ");
                     nome = entrada.nextLine();
@@ -119,7 +117,7 @@ public class FicharioTurma {
 
 
         } else
-            System.out.println("Turma não encontrada!");
+            System.out.println("\nTurma não encontrada!\n");
     }
 
     private boolean turmaVazia(Turma turma) {
@@ -130,24 +128,24 @@ public class FicharioTurma {
 
         Turma turma = tiposBuscaTurmas();
         if (turmaVazia(turma)) {
-            System.out.println("Confirma a exclusão?");
+            System.out.println("\nConfirma a exclusão?");
             System.out.println("1- Sim\n 2-Não");
             int confirmacao = entrada.nextInt();
             entrada.skip("\n");
             if (turma != null) {
                 if (confirmacao == 1) {
                     turmas.remove(turma);
-                    System.out.println("Turma excluída!");
-                } else System.out.println("Operação cancelada, turma não excluída!");
+                    System.out.println("\nTurma excluída!");
+                } else System.out.println("\nOperação cancelada, turma não excluída!");
             } else
-                System.out.println("Turma não encontrada!");
-        } else System.out.println("Não foi possível excluir a turma pois ela contém alunos vinculados!");
+                System.out.println("\nTurma não encontrada!");
+        } else System.out.println("\nNão foi possível excluir a turma pois ela contém alunos vinculados!\n");
     }
 
 
     public void relatorio() {
 
-        System.out.println("[Relatório de TURMAS]");
+        System.out.println("[Relatório de TURMAS]\n");
         System.out.println(turmas);
 
     }

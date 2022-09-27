@@ -8,8 +8,6 @@ import br.estudante.iftm.elisabete.modelos.Turma;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-// completar os menus
-// todos devem ter os metodos cadastrar, alterar, excluir, consultar e relatorio
 
 public class Main {
 
@@ -157,7 +155,7 @@ public class Main {
                 case 4:
                     do {
                         System.out.println("1 - Vincular aluno a uma Turma " );
-                        System.out.println("2 - Alterar aluno de turma ");
+//                        System.out.println("2 - Alterar aluno de turma ");
                         System.out.println("3 - Desvincular aluno da turma " );
                         System.out.println("4 - Voltar ao menu principal " );
 

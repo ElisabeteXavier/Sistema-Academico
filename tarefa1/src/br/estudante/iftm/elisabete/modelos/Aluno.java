@@ -7,6 +7,16 @@ import java.util.Objects;
 public class Aluno extends Pessoa {
     private String matricula;
 
+    private SituacaoAluno situacaoAluno = SituacaoAluno.NaoEnturmado ;
+
+    public SituacaoAluno getSituacaoAluno() {
+        return situacaoAluno;
+    }
+
+    public void setSituacaoAluno(SituacaoAluno situacaoAluno) {
+        this.situacaoAluno = situacaoAluno;
+    }
+
     public String getMatricula() {
         return matricula;
     }
@@ -47,7 +57,8 @@ public class Aluno extends Pessoa {
                 "\n cpf= " + cpf +
                 "\n telefone= " + telefone +
                 "\n email= " + email +
-                "\n Data de Nascimento= " + dataNascimento.format(formatador);
+                "\n Data de Nascimento= " + dataNascimento.format(formatador) +
+                "\n Situação do Aluno = " + situacaoAluno;
     }
 
 

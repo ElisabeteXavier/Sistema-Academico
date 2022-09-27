@@ -1,6 +1,7 @@
 package br.estudante.iftm.elisabete.ficharios;
 
 import br.estudante.iftm.elisabete.modelos.Aluno;
+import br.estudante.iftm.elisabete.modelos.SituacaoAluno;
 import br.estudante.iftm.elisabete.modelos.Turma;
 
 import java.util.ArrayList;
@@ -82,6 +83,7 @@ public class FicharioEnturmacao {
 
                 if (!alunoVinculadoTurma(aluno)) {
                     turma.getAlunosTurmas().add(aluno);
+                    aluno.setSituacaoAluno(SituacaoAluno.Enturmado);
                     System.out.println("\nAluno vinculado a turma\n");
                 } else
                     System.out.println("\nAluno ja vinculado a uma turma\n");

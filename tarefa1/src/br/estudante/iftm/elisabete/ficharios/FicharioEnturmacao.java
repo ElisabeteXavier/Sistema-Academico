@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class FicharioEnturmacao {
+public class FicharioEnturmacao implements Fichario{
 
     private ArrayList<Turma> turmas;
     private ArrayList<Aluno> alunos;
@@ -63,7 +63,7 @@ public class FicharioEnturmacao {
 
 
 
-    public void vincularAlunoTurma() {
+    public void cadastrar() {
 
 
         String nomeAluno, nomeTurma;
@@ -95,10 +95,12 @@ public class FicharioEnturmacao {
     }
 
 
-    public void alteraAlunoTurma(){};
+    public void alterar(){};
+    public void consultar(){};
+    public void relatorio(){};
 
 
-    public void desvincularAlunoTurma(){
+    public void excluir(){
 
         System.out.println(" ===DESVINCULAR ALUNO === ");
 

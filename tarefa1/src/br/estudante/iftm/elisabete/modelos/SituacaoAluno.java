@@ -5,13 +5,13 @@ public enum SituacaoAluno {
 
     NaoEnturmado {
         public String toString() {
-            return "Não Matriculado";
+            return "Não Enturmado";
         }
     },
 
     Enturmado{
         public String toString(){
-            return "Matriculado";
+            return "Enturmado";
         }
     },
 

@@ -3,7 +3,7 @@ package br.estudante.iftm.elisabete.modelos;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Pessoa {
+public  abstract class Pessoa {
     protected String nome;
     protected String cpf;
     protected String telefone;

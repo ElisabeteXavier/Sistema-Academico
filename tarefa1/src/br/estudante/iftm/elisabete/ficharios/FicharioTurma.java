@@ -5,7 +5,7 @@ import br.estudante.iftm.elisabete.modelos.Turma;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class FicharioTurma {
+public class FicharioTurma implements Fichario{
 
     private final ArrayList<Turma> turmas;
     private final Scanner entrada;

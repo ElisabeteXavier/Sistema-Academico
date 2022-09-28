@@ -6,7 +6,7 @@ import br.estudante.iftm.elisabete.modelos.Professor;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class FicharioProfessor {
+public class FicharioProfessor implements Fichario {
 
 
     private final ArrayList<Professor> professores;

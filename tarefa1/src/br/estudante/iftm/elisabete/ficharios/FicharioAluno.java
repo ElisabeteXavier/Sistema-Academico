@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class FicharioAluno {
+public class FicharioAluno implements Fichario {
     private final ArrayList<Aluno> alunos;
 
     private FicharioEnturmacao ficharioEnturmacao;

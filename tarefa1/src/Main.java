@@ -164,13 +164,13 @@ public class Main {
 
                         switch (operacaoCadastro) {
                             case 1:
-                               ficharioEnturmacao.vincularAlunoTurma();
+                               ficharioEnturmacao.cadastrar();
                                 break;
                             case 2:
 //                                ficharioEnturmacao.alteraAlunoTurma
                                 break;
                             case 3:
-                               ficharioEnturmacao.desvincularAlunoTurma();
+                               ficharioEnturmacao.excluir();
                                 break;
 
                             default:

@@ -1,6 +1,5 @@
-package br.estudante.iftm.elisabete.servicos;
-
 import br.estudante.iftm.elisabete.modelos.Aluno;
+import br.estudante.iftm.elisabete.servicos.MatriculaAlunoServico;
 
 public class MainServiços {
 

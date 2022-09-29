@@ -14,7 +14,6 @@ public class FicharioAluno implements Fichario {
     private FicharioEnturmacao ficharioEnturmacao;
     private final Scanner entrada;
 
-
     public FicharioAluno(ArrayList<Aluno> alunos, FicharioEnturmacao ficharioEnturmacao) {
         this.alunos = alunos;
         this.ficharioEnturmacao = ficharioEnturmacao;
@@ -51,11 +50,10 @@ public class FicharioAluno implements Fichario {
 
         Aluno aluno = new Aluno(matriculaAlterada);
 
-        if(alunos.contains(aluno)){
+        if (alunos.contains(aluno)) {
             int i = alunos.indexOf(aluno);
             return alunos.get(i);
-        }
-        else
+        } else
             return null;
     }
 
@@ -90,7 +88,7 @@ public class FicharioAluno implements Fichario {
         return aluno;
     }
 
-    private Aluno setarAluno(){
+    private Aluno setarAluno() {
         String nome, matricula, telefone, cpf, email, dataNascimento;
         System.out.println(" === Cadastrar ALUNO ==== ");
         System.out.print("Nome: ");
@@ -106,7 +104,7 @@ public class FicharioAluno implements Fichario {
         System.out.print("Data de nascimento dd/mm/yyyy: ");
         dataNascimento = entrada.nextLine();
 
-        return new Aluno(nome, matricula, telefone, cpf, email,dataNascimento);
+        return new Aluno(nome, matricula, telefone, cpf, email, dataNascimento);
     }
 
 
